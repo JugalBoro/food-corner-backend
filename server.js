@@ -29,10 +29,10 @@ var allowCrossDomain = function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Content-Type");
   next();
 };
-app.configure(function() {
-    app.use(allowCrossDomain);
+
+app.use(allowCrossDomain);
     //some other code
-});  
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
